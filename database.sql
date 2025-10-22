@@ -1,0 +1,13 @@
+-- database.sql
+CREATE DATABASE IF NOT EXISTS prueba_programador CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE prueba_programador;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(200) NOT NULL,
+  edad TINYINT UNSIGNED NOT NULL,
+  sexo ENUM('M','F','Otro') NOT NULL,
+  fecha_nacimiento DATE NOT NULL,
+  correo VARCHAR(255) NOT NULL UNIQUE,
+  creado_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
